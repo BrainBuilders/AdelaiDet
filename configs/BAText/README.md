@@ -4,26 +4,45 @@
 ## Models
 ### Experimental resutls on CTW1500: 
 
-Name | inf. time | e2e-hmean | det-hmean | download
---- |:---:|:---:|:---:|:---:
-[v1-CTW1500-finetune](https://github.com/Yuliang-Liu/AdelaiDet/blob/master/configs/BAText/CTW1500/attn_R_50.yaml) |  8.7 FPS | 53.2 | 84.4 | [model](https://universityofadelaide.box.com/shared/static/okeo5pvul5v5rxqh4yg8pcf805tzj2no.pth)
-[v2-CTW1500-finetune](https://github.com/Yuliang-Liu/AdelaiDet/blob/master/configs/BAText/CTW1500/v2_attn_R_50.yaml) |  7.2 FPS | 57.7 | 85.0 | [model](https://drive.google.com/file/d/12HV1dHjw1POdhOiHXPPXcGnjyp-3IuQv/view?usp=sharing)
+Name | inf. time | e2e-None-hmean | e2e-Full-hmean | det-hmean | download
+--- |:---:|:---:|:---:|:---:|:---:
+[v1-CTW1500-finetune](CTW1500/attn_R_50.yaml) |  8.7 FPS | 53.2 | 74.7 | 84.4 | [pretrained-model](https://universityofadelaide.box.com/shared/static/okeo5pvul5v5rxqh4yg8pcf805tzj2no.pth)
+[v2-CTW1500-finetune](CTW1500/v2_attn_R_50.yaml) |  7.2 FPS | 57.7 | 75.8 | 85.0 | [finetuned-model](https://drive.google.com/file/d/12HV1dHjw1POdhOiHXPPXcGnjyp-3IuQv/view?usp=sharing)
 
 
 ### Experimental resutls on TotalText:
 
-Config | inf. time | e2e-hmean | det-hmean | download
----  |:---------:|:---------:|:---------:|:---:
-[v1-pretrain](https://github.com/Yuliang-Liu/AdelaiDet/blob/master/configs/BAText/Pretrain/attn_R_50.yaml) |  11.3 FPS | 58.1 | 80.0 | [model](https://cloudstor.aarnet.edu.au/plus/s/dEzxhTlEumICiq0/download)
-[v1-totaltext-finetune](https://github.com/Yuliang-Liu/AdelaiDet/tree/master/configs/BAText/TotalText/attn_R_50.yaml) |  11.3 FPS | 67.1 | 86.0 | [model](https://cloudstor.aarnet.edu.au/plus/s/tYsnegjTs13MwwK/download)
-[v2-pretrain](https://github.com/Yuliang-Liu/AdelaiDet/blob/master/configs/BAText/Pretrain/v2_attn_R_50.yaml) |  7.8 FPS | 63.5 | 83.7 | [model](https://drive.google.com/file/d/1v5C9klxBuNVBaLVxZRCy1MYnwEu0F25q/view?usp=sharing)
-[v2-totaltext-finetune](https://github.com/Yuliang-Liu/AdelaiDet/tree/master/configs/BAText/TotalText/v2_attn_R_50.yaml) |  7.7 FPS | 71.8 | 87.2 | [model](https://drive.google.com/file/d/1jR5-A-7ITvjdSx3kWVE9bMgh_biMsqcR/view?usp=sharing)
+Config | inf. time | e2e-None-hmean | e2e-Full-hmean | det-hmean | download
+---  |:---------:|:---------:|:---------:|:---------:|:---:
+[v1-pretrain](Pretrain/attn_R_50.yaml) |  11.3 FPS | 58.1 | 75.5 | 80.0 | [pretrained-model](https://cloudstor.aarnet.edu.au/plus/s/dEzxhTlEumICiq0/download)
+[v1-totaltext-finetune](TotalText/attn_R_50.yaml) |  11.3 FPS | 67.1 | 81.1 | 86.0 | [finetuned-model](https://cloudstor.aarnet.edu.au/plus/s/tYsnegjTs13MwwK/download)
+[v2-pretrain](Pretrain/v2_attn_R_50.yaml) |  7.8 FPS | 63.5 | 78.4 | 83.7 | [pretrained-model](https://drive.google.com/file/d/1v5C9klxBuNVBaLVxZRCy1MYnwEu0F25q/view?usp=sharing)
+[v2-totaltext-finetune](TotalText/v2_attn_R_50.yaml) |  7.7 FPS | 71.8 | 83.4 | 87.2 | [finetuned-model](https://drive.google.com/file/d/1jR5-A-7ITvjdSx3kWVE9bMgh_biMsqcR/view?usp=sharing)
+
+### Experimental resutls on [ICDAR2015](https://rrc.cvc.uab.es/?ch=4):
+
+Name | e2e-None | e2e-Generic | e2e-Weak | e2e-Strong | det-hmean | download
+--- |:---:|:---:|:---:|:---:|:---:|:---:
+[v1-icdar2015-pretrain](Pretrain/v1_ic15_attn_R_50.yaml) | 38.0 | 50.8 | 59.0 | 65.8 | 83.2 | [pretrained-model](https://drive.google.com/file/d/1MZab_ftY8qGCurW1rwZBx5ftquZgcf4e/view?usp=sharing)
+[v1-icdar2015-finetune](ICDAR2015/v1_attn_R_50.yaml) | 57.1 | 66.8 | 74.1 | 79.2 | 86.8 | [finetuned-model](https://drive.google.com/file/d/15eEctI4CqTxtcMAMcYiHIysYw3l53BGQ/view?usp=sharing)
+[v2-icdar2015-pretrain](Pretrain/v2_ic15_attn_R_50.yaml) | 59.5 | 69.0 | 75.8 | 80.8 | 86.2 | [pretrained-model](https://drive.google.com/file/d/17xIB064Jlq31z875POrw9a3aDmg04C3y/view?usp=sharing)
+[v2-icdar2015-finetune](ICDAR2015/v2_attn_R_50.yaml) | 66.3 | 73.2 | 78.8 | 83.7 | 88.2 | [finetuned-model](https://drive.google.com/file/d/1bxVxu7kX13S1_xYvCfUfomO8hSZGNZUl/view?usp=sharing)
 
 ### Experimental resutls on [ReCTS](https://rrc.cvc.uab.es/?ch=12):
 
 Name | inf. time | det-recall | det-precision | det-hmean | 1 - NED | download
 --- |:---:|:---:|:---:|:---:|:---:|:---:
-[v2-ReCTS-finetune](https://github.com/Yuliang-Liu/AdelaiDet/blob/master/configs/BAText/ReCTS/v2_chn_attn_R_50.yaml) |  8 FPS | 87.9 | 92.9 | 90.33 | 63.9 | [model](https://drive.google.com/file/d/1YTlC5jkh6y3g1RRc_hDs4m_tcU2J20fe/view?usp=sharing)
+[v2-Chinese-pretrained](Pretrain/v2_chn_attn_R_50.yaml) |  -| - | - | - | - | [pretrained-model](https://drive.google.com/file/d/1AU8yAMNm2H8ryB7uIvp2HUHpCso7eyNH/view?usp=sharing)
+[v2-ReCTS-finetune](ReCTS/v2_chn_attn_R_50.yaml) |  8 FPS | 87.9 | 92.9 | 90.33 | 63.9 | [finetuned-model](https://drive.google.com/file/d/1YTlC5jkh6y3g1RRc_hDs4m_tcU2J20fe/view?usp=sharing)
+
+
+### Experimental resutls on [MSRA-TD500](http://www.iapr-tc11.org/mediawiki/index.php/MSRA_Text_Detection_500_Database_%28MSRA-TD500%29):
+
+Name | det-recall | det-precision | det-hmean | download
+--- |:---:|:---:|:---:|:---:
+[v2-TD500-finetune](https://github.com/aim-uofa/AdelaiDet/issues/537) | 81.9 | 89.0 | 85.3 | [finetuned-model](https://github.com/aim-uofa/AdelaiDet/issues/537)
+
+* Note the pretrained model for TD500 is the Chinese pretrained used for ReCTS. As MSRA-TD is a det. only dataset, a small amount of [modification](https://github.com/aim-uofa/AdelaiDet/issues/537) is needed.
 
 ## Quick Start (ABCNetv1)
 
@@ -47,6 +66,14 @@ python demo/demo.py \
     --input datasets/totaltext/test_images/ \
     --opts MODEL.WEIGHTS tt_attn_R_50.pth
 ```
+or
+```
+# Download v1_ic15_finetuned.pth above
+python demo/demo.py \
+    --config-file configs/BAText/ICDAR2015/v1_attn_R_50.yaml \
+    --input datasets/icdar2015/test_images \
+    --opts MODEL.WEIGHTS v1_ic15_finetuned.pth
+```
 ### Train Your Own Models
 
 To train a model with "train_net.py", first setup the corresponding datasets following
@@ -54,23 +81,27 @@ To train a model with "train_net.py", first setup the corresponding datasets fol
 
 ```
 cd datasets/
-wget https://universityofadelaide.box.com/shared/static/32p6xsdtu0keu2o6pb5aqhyjotnljxep.zip -O tot.zip
-unzip tot.zip
-rm tot.zip
-wget https://universityofadelaide.box.com/shared/static/6ui89vca7cbp15ysnxqg5r494ix7l6cu.zip -O ctw1500.zip
-mkdir CTW1500/ | unzip ctw1500.zip -d CTW1500/
-rm ctw1500.zip
+wget https://drive.google.com/file/d/1we4iwZNA80q-yRoEKqB66SuTa1tPbhZu/view?usp=sharing -O totaltext.zip
+unzip totaltext.zip
+rm totaltext.zip
+wget https://drive.google.com/file/d/1ntlnlnQHZisDoS_bgDvrcrYFomw9iTZ0/view?usp=sharing -O CTW1500.zip
+unzip CTW1500.zip 
+rm CTW1500.zip
+wget https://drive.google.com/file/d/1J94245rU-s7KTecNQRD3KXG04ICZhL9z/view?usp=sharing -O icdar2015.zip
+unzip icdar2015.zip 
+rm icdar2015.zip
 mkdir evaluation
 cd evaluation
 wget -O gt_ctw1500.zip https://cloudstor.aarnet.edu.au/plus/s/xU3yeM3GnidiSTr/download
 wget -O gt_totaltext.zip https://cloudstor.aarnet.edu.au/plus/s/SFHvin8BLUM4cNd/download
+wget -O gt_icdar2015.zip https://drive.google.com/file/d/1wrq_-qIyb_8dhYVlDzLZTTajQzbic82Z/view?usp=sharing
 ```
 
 * Note (synthetic and mlt2017 datasets need to be downloaded through [datasets/README.md](../../datasets/README.md).)
 
 You can also prepare your custom dataset following the [example scripts](https://universityofadelaide.box.com/s/phqfzpvhe0obmkvn17akn9qw47u1m44i).
 
-Pretrainining with synthetic data:
+Pretrainining with synthetic data (For Totaltext and CTW1500):
 
 ```
 OMP_NUM_THREADS=1 python tools/train_net.py \
@@ -79,7 +110,17 @@ OMP_NUM_THREADS=1 python tools/train_net.py \
     OUTPUT_DIR text_pretraining/attn_R_50
 ```
 
-Finetuning on Total Text:
+Pretrainining with synthetic data (For ICDAR2015):
+
+```
+OMP_NUM_THREADS=1 python tools/train_net.py \
+    --config-file configs/BAText/Pretrain/v1_ic15_attn_R_50.yaml \
+    --num-gpus 4 \
+    OUTPUT_DIR text_pretraining/v1_ic15_attn_R_50
+```
+
+
+Finetuning on TotalText:
 
 ```
 OMP_NUM_THREADS=1 python tools/train_net.py \
@@ -97,6 +138,15 @@ OMP_NUM_THREADS=1 python tools/train_net.py \
     MODEL.WEIGHTS text_pretraining/attn_R_50/model_final.pth
 ```
 
+Finetuning on ICDAR2015:
+
+```
+OMP_NUM_THREADS=1 python tools/train_net.py \
+    --config-file configs/BAText/ICDAR2015/v1_attn_R_50.yaml \
+    --num-gpus 4 \
+    MODEL.WEIGHTS text_pretraining/v1_ic15_attn_R_50/model_final.pth
+```
+
 ### Evaluate on Trained Model 
 Download test GT [here](../../datasets/README.md) so that the directory has the following structure:
 
@@ -105,9 +155,10 @@ datasets
 |_ evaluation
 |  |_ gt_totaltext.zip
 |  |_ gt_ctw1500.zip
+|  |_ gt_icdar2015.zip
 ```
 
-Producing both e2e and detection results on CTW1500:
+Producing both (w/wo lexion) e2e and detection results on CTW1500:
 ```
 wget -O ctw1500_attn_R_50.pth https://universityofadelaide.box.com/shared/static/okeo5pvul5v5rxqh4yg8pcf805tzj2no.pth
 python tools/train_net.py \
@@ -122,6 +173,17 @@ python tools/train_net.py \
     --config-file configs/BAText/TotalText/attn_R_50.yaml \
     --eval-only \
     MODEL.WEIGHTS tt_attn_R_50.pth
+```
+or ICDAR2015:
+```
+# Download v1_ic15_finetuned.pth above
+# MODEL.BATEXT.EVAL_TYPE: 3: Strong, 2: Weak, 1: Generic
+python tools/train_net.py \
+    --config-file configs/BAText/ICDAR2015/v1_attn_R_50.yaml \
+    --num-gpus 4 \
+    --eval-only \
+    MODEL.WEIGHTS v1_ic15_finetuned.pth \
+    MODEL.BATEXT.EVAL_TYPE 3     
 ```
 
 You can also evalute the json result file offline following the [evaluation_example_scripts](https://universityofadelaide.box.com/shared/static/e3yha5080jzvjuyfeayprnkbu265t3hr.zip), including an example of how to evaluate on a custom dataset. If you want to measure the ***inference time***, please change --num-gpus to 1.
@@ -149,6 +211,14 @@ python demo/demo.py \
     --input datasets/totaltext/test_images/ \
     --opts MODEL.WEIGHTS model_v2_totaltext.pth
 ```
+* For ICDAR2015
+```
+# Download ic15_finetuned.pth above
+python demo/demo.py \
+    --config-file configs/BAText/ICDAR2015/v2_attn_R_50.yaml \
+    --input datasets/icdar2015/test_images/ \
+    --opts MODEL.WEIGHTS ic15_finetuned.pth
+```
 * For ReCTS (Chinese)
 ```
 # Download model_v2_rects.pth above
@@ -161,13 +231,20 @@ python demo/demo.py \
 ```
 
 ### Train
-We traing ABCNetv2 using 4 V100.
+Training ABCNetv2 using 4 V100.
 * Pretrainining with synthetic data (for TotalText and CTW1500):
 ```
 OMP_NUM_THREADS=1 python tools/train_net.py \
     --config-file configs/BAText/Pretrain/v2_attn_R_50.yaml \
     --num-gpus 4 \
     OUTPUT_DIR text_pretraining/v2_attn_R_50
+```
+* Pretrainining with synthetic data (for ICDAR2015):
+```
+OMP_NUM_THREADS=1 python tools/train_net.py \
+    --config-file configs/BAText/Pretrain/v2_ic15_attn_R_50.yaml \
+    --num-gpus 4 \
+    OUTPUT_DIR text_pretraining/v2_ic15_attn_R_50
 ```
 * Pretrainining with synthetic data (for ReCTS):
 ```
@@ -192,6 +269,14 @@ OMP_NUM_THREADS=1 python tools/train_net.py \
     --config-file configs/BAText/CTW1500/v2_attn_R_50.yaml \
     --num-gpus 4 \
     MODEL.WEIGHTS text_pretraining/v2_attn_R_50/model_final.pth
+```
+* Finetuning on ICDAR2015:
+```
+# Download ic15_pretrained.pth above or using your own pretrained model
+OMP_NUM_THREADS=1 python tools/train_net.py \
+    --config-file configs/BAText/ICDAR2015/v2_attn_R_50.yaml \
+    --num-gpus 4 \
+    MODEL.WEIGHTS ic15_pretrained.pth
 ```
 * Finetuning on ReCTS:
 ```
@@ -219,6 +304,17 @@ python tools/train_net.py \
     --config-file configs/BAText/TotalText/v2_attn_R_50.yaml \
     --eval-only \
     MODEL.WEIGHTS model_v2_totaltext.pth
+```
+* Evaluate on ICDAR2015:
+```
+# Download ic15_finetuned.pth above 
+# MODEL.BATEXT.EVAL_TYPE: 3: Strong, 2: Weak, 1: Generic
+python tools/train_net.py \
+    --config-file configs/BAText/ICDAR2015/v2_attn_R_50.yaml \
+    --num-gpus 4 \
+    --eval-only \
+    MODEL.WEIGHTS ic15_finetuned.pth \
+    MODEL.BATEXT.EVAL_TYPE 3 
 ```
 * Evaluate on ReCTS:
 

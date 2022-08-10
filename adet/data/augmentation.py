@@ -19,6 +19,8 @@ def gen_crop_transform_with_instance(crop_size, image_size, instances, crop_box=
             dataset format.
     """
     bbox = random.choice(instances)
+    bbox[::2] = np.clip(bbox[::2], 0, image_size[1])
+    bbox[1::2] = np.clip(bbox[1::2], 0, image_size[0])
     crop_size = np.asarray(crop_size, dtype=np.int32)
     center_yx = (bbox[1] + bbox[3]) * 0.5, (bbox[0] + bbox[2]) * 0.5
     assert (
